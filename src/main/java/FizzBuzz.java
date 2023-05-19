@@ -12,21 +12,20 @@ public class FizzBuzz {
 
     public List<String> fizzBuzz() {
 
-        List numbersTo100 = IntStream.rangeClosed(MIN_RANGE, MAX_RANGE)
+        return IntStream.rangeClosed(MIN_RANGE, MAX_RANGE)
                 .boxed()
                 .map(number -> {
-                    if (number % FIZZ_NUM == 0 && number % BUZZ_NUM == 0) return "FizzBuzz";
-                    else if (number % FIZZ_NUM == 0) return "Fizz";
-                    else if (number % BUZZ_NUM == 0) return "Buzz";
-                    else return Integer.toString(number);
+                    if (number % FIZZ_NUM == 0 && number % BUZZ_NUM == 0) {
+                        return "FizzBuzz";
+                    }
+                    if (number % FIZZ_NUM == 0) {
+                        return "Fizz";
+                    }
+                    if (number % BUZZ_NUM == 0) {
+                        return "Buzz";
+                    }
+                    return Integer.toString(number);
 
                 }).collect(Collectors.toList());
-
-        return numbersTo100;
-    }
-
-    public static void main(String[] args) {
-        FizzBuzz fizzBuzz = new FizzBuzz();
-        System.out.println(fizzBuzz.fizzBuzz());
     }
 }

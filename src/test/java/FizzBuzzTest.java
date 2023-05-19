@@ -10,7 +10,6 @@ class FizzBuzzTest {
     void shouldReturnFizzBuzzFor15(){
         assertEquals("FizzBuzz",fizzBuzz.fizzBuzz().get(14));
     }
-
     @Test
     void shouldReturnFizzFor3(){
         assertEquals("Fizz",fizzBuzz.fizzBuzz().get(2));
